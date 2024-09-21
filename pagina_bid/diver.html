@@ -257,6 +257,7 @@
                                 <th>Demanda</th>
                                 <th>Área</th>
                                 <th>Proporción electricidad</th>
+                                <th>Municipio Prioritario</th>
                                 <th>Índice</th>
                             </tr>
                         </thead>
@@ -1151,6 +1152,7 @@ function updateTable() {
             <td>${feature.total_dem || ""}</td>
             <td>${feature.Area || ""}</td>
             <td>${feature.perc_elec || ""}</td>
+            <td>${feature.Priorizado || ""}</td>
             <td>${aplicarPressed ? (feature.index_new !== undefined && feature.index_new !== null ? feature.index_new : "N/A") 
                                   : (feature.Indice !== undefined && feature.Indice !== null ? feature.Indice : "N/A")}</td> <!-- Índice -->
         `;
@@ -1232,6 +1234,7 @@ document.getElementById('downloadExcel').addEventListener('click', function() {
             "Total Demanda": feature.total_dem,
             "Área": feature.Area,
             "Porcentaje con Electricidad": feature.perc_elec,
+            "Municipio Priorizado": feature.Priorizado,
             "Índice": feature.index_new !== undefined && feature.index_new !== null ? feature.index_new : feature.Indice
         });
     });
@@ -1268,6 +1271,7 @@ document.getElementById('downloadExcel').addEventListener('click', function() {
         { wch: 20 }, // Total Demanda
         { wch: 10 }, // Área
         { wch: 25 }, // Porcentaje con Electricidad
+        { wch: 25 }, // Municipio Priorizado
         { wch: 10 }  // Índice
     ];
 
