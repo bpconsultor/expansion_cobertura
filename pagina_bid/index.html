@@ -119,8 +119,7 @@
               <header class="header">
                 <!-- Left side: Logos -->
                 <div class="d-flex align-items-center">
-                    <img src="path/to/logo1.png" alt="Logo 1">
-                    <img src="path/to/logo2.png" alt="Logo 2">
+
                 </div>
         
                 <!-- Center: Title -->
@@ -191,29 +190,29 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="demanda">Demanda</label>
-                                            <input type="number" class="form-control" id="demanda" placeholder="Demanda" step="any" min="0" max="1" >
+                                            <input type="number" class="form-control" id="demanda" placeholder="Demanda" step="any" min="0" max="1" value="0.4">
                                         </div>
                                         <div class="form-group">
                                             <label for="pobreza">Pobreza</label>
-                                            <input type="number" class="form-control" id="pobreza" placeholder="Pobreza" step="any" min="0" max="1" >
+                                            <input type="number" class="form-control" id="pobreza" placeholder="Pobreza" step="any" min="0" max="1" value="0.2">
                                         </div>
                                         <div class="form-group">
                                             <label for="discapacidad">Discapacidad</label>
-                                            <input type="number" class="form-control" id="discapacidad" placeholder="Discapacidad" step="any" min="0" max="1">
+                                            <input type="number" class="form-control" id="discapacidad" placeholder="Discapacidad" step="any" min="0" max="1" value="0.1">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="etnicidad">Etnicidad</label>
-                                            <input type="number" class="form-control" id="etnicidad" placeholder="Etnicidad" step="any" min="0" max="1" >
+                                            <input type="number" class="form-control" id="etnicidad" placeholder="Etnicidad" step="any" min="0" max="1" value="0.1">
                                         </div>
                                         <div class="form-group">
                                             <label for="migracion">Migración</label>
-                                            <input type="number" class="form-control" id="migracion" placeholder="Migración" step="any" min="0" max="1" >
+                                            <input type="number" class="form-control" id="migracion" placeholder="Migración" step="any" min="0" max="1" value="0.1">
                                         </div>
                                         <div class="form-group">
                                             <label for="embarazos">Embarazos</label>
-                                            <input type="number" class="form-control" id="embarazos" placeholder="Embarazos" step="any" min="0" max="1" >
+                                            <input type="number" class="form-control" id="embarazos" placeholder="Embarazos" step="any" min="0" max="1" value="0.1">
                                         </div>
                                     </div>
                                 </div>
@@ -467,108 +466,51 @@ map.on('zoomend', function() {
         function pop_PoligonosBasico_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Status_Ass'] !== null ? autolinker.link(feature.properties['Status_Ass'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ORIG_FID'] !== null ? autolinker.link(feature.properties['ORIG_FID'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['school1'] !== null ? autolinker.link(feature.properties['school1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['school2'] !== null ? autolinker.link(feature.properties['school2'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['school3'] !== null ? autolinker.link(feature.properties['school3'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['school4'] !== null ? autolinker.link(feature.properties['school4'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['school5'] !== null ? autolinker.link(feature.properties['school5'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['school6'] !== null ? autolinker.link(feature.properties['school6'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['school7'] !== null ? autolinker.link(feature.properties['school7'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['school8'] !== null ? autolinker.link(feature.properties['school8'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID_1'] !== null ? autolinker.link(feature.properties['OBJECTID_1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
+                        <th scope="row">Departamento</th>\
                         <td colspan="2">' + (feature.properties['Departamen'] !== null ? autolinker.link(feature.properties['Departamen'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <th scope="row">Municipio</th>\
                         <td colspan="2">' + (feature.properties['Municipio'] !== null ? autolinker.link(feature.properties['Municipio'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['CodMun'] !== null ? autolinker.link(feature.properties['CodMun'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">CE 1</th>\
+                        <td colspan="2">' + (feature.properties['school1'] !== null ? autolinker.link(feature.properties['school1'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Num_school'] !== null ? autolinker.link(feature.properties['Num_school'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">CE 2</th>\
+                        <td colspan="2">' + (feature.properties['school2'] !== null ? autolinker.link(feature.properties['school2'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['total_dem'] !== null ? autolinker.link(feature.properties['total_dem'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">CE 3</th>\
+                        <td colspan="2">' + (feature.properties['school3'] !== null ? autolinker.link(feature.properties['school3'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['escuela_ma'] !== null ? autolinker.link(feature.properties['escuela_ma'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">CE 4</th>\
+                        <td colspan="2">' + (feature.properties['school4'] !== null ? autolinker.link(feature.properties['school4'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">CE 5</th>\
+                        <td colspan="2">' + (feature.properties['school5'] !== null ? autolinker.link(feature.properties['school5'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['rural_urba'] !== null ? autolinker.link(feature.properties['rural_urba'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">CE 6</th>\
+                        <td colspan="2">' + (feature.properties['school6'] !== null ? autolinker.link(feature.properties['school6'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Maya_garif'] !== null ? autolinker.link(feature.properties['Maya_garif'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">CE 7</th>\
+                        <td colspan="2">' + (feature.properties['school7'] !== null ? autolinker.link(feature.properties['school7'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['no_electri'] !== null ? autolinker.link(feature.properties['no_electri'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">CE 8</th>\
+                        <td colspan="2">' + (feature.properties['school8'] !== null ? autolinker.link(feature.properties['school8'].toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['number_no_'] !== null ? autolinker.link(feature.properties['number_no_'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['perc_elec'] !== null ? autolinker.link(feature.properties['perc_elec'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['norm_deman'] !== null ? autolinker.link(feature.properties['norm_deman'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['norm_pobre'] !== null ? autolinker.link(feature.properties['norm_pobre'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['norm_migra'] !== null ? autolinker.link(feature.properties['norm_migra'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['norm_disca'] !== null ? autolinker.link(feature.properties['norm_disca'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['norm_embar'] !== null ? autolinker.link(feature.properties['norm_embar'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['mayor_40'] !== null ? autolinker.link(feature.properties['mayor_40'].toLocaleString()) : '') + '</td>\
-                    </tr>\
+                    <th scope="row">Indice</th>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Indice'] !== null ? autolinker.link(feature.properties['Indice'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Num_Modulo'] !== null ? autolinker.link(feature.properties['Num_Modulo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ObjectID_2'] !== null ? autolinker.link(feature.properties['ObjectID_2'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
+                        <th scope="row">Ranking</th>\
                         <td colspan="2">' + (feature.properties['Ranking'] !== null ? autolinker.link(feature.properties['Ranking'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
@@ -701,7 +643,7 @@ map.on('zoomend', function() {
                         <td>' + (feature.properties['Jornada'] !== null ? autolinker.link(feature.properties['Jornada'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">estimado_g</th>\
+                        <th scope="row">Demanda</th>\
                         <td>' + (feature.properties['estimado_g'] !== null ? autolinker.link(feature.properties['estimado_g'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -899,6 +841,7 @@ map.on('zoomend', function() {
                     }
                 
                     let indexNewValues = [];
+                    let rankedFeatures = [];
                     
                     // Step 1: Calculate 'index_new' for each feature in layer_PoligonosBasico_2
                     layer_PoligonosBasico_2.eachLayer(function(layer) {
@@ -922,6 +865,7 @@ map.on('zoomend', function() {
                             // Store the result in the feature and collect for quartile calculation
                             feature.properties['index_new'] = index_new;
                             indexNewValues.push(index_new);
+                            rankedFeatures.push(feature); // Add the feature to the ranking array
                         } else {
                             feature.properties['index_new'] = null;  // Set null if conditions are not met
                         }
@@ -933,8 +877,8 @@ map.on('zoomend', function() {
                 
                     // Step 3: Update getColor function to use quartiles
                     function getColor(index_new) {
-                        if (index_new === null || index_new === undefined) {
-                            return '#FFFFFF';  // White for null/undefined index_new
+                        if (index_new === null || index_new === undefined || isNaN(index_new)) {
+                            return '#FFFFFF';  // White for null, undefined, or NaN index_new values
                         }
                         
                         return index_new === 0 ? '#FFFFFF' :  // White for index_new = 0
@@ -947,9 +891,22 @@ map.on('zoomend', function() {
                     // Step 4: Apply the new color scheme to PoligonosBasico layer
                     layer_PoligonosBasico_2.eachLayer(function(layer) {
                         var feature = layer.feature;
-                        if (feature.properties['index_new'] !== null) {
+                    
+                        // If `index_new` is `N/A`, set to white explicitly
+                        if (feature.properties['index_new'] === null || feature.properties['index_new'] === undefined || isNaN(feature.properties['index_new'])) {
+                            layer.setStyle({
+                                fillColor: '#FFFFFF',  // White for N/A values
+                                fillOpacity: 1.0,
+                                weight: 1.0,
+                                color: '#000000'  // Border color
+                            });
+                        } else {
+                            // Apply the calculated color for valid `index_new` values
                             layer.setStyle({
                                 fillColor: getColor(feature.properties['index_new']),
+                                fillOpacity: 1.0,
+                                weight: 1.0,
+                                color: '#000000'
                             });
                         }
                     });
@@ -986,6 +943,99 @@ map.on('zoomend', function() {
                             console.log(`No matching polygon found for Point OBJECTID_1: ${pointFeature.properties['OBJECTID_1']}`);
                         }
                     });
+
+                     // Step 6: Rank features based on 'index_new'
+                   // rankedFeatures.sort(function(a, b) {
+                    //    return b.properties['index_new'] - a.properties['index_new'];
+                  //  });
+
+                    // Step 7: Assign ranks based on the sorted order, ensuring all features are ranked
+                    let validRankedFeatures = rankedFeatures.filter(feature => feature.properties['index_new'] !== null && feature.properties['index_new'] !== undefined);
+                    let invalidRankedFeatures = rankedFeatures.filter(feature => feature.properties['index_new'] === null || feature.properties['index_new'] === undefined);
+
+                    // Sort the valid features
+                    validRankedFeatures.sort(function(a, b) {
+                        if (b.properties['index_new'] === a.properties['index_new']) {
+                            return a.properties['OBJECTID_1'] - b.properties['OBJECTID_1']; // Secondary sort by OBJECTID_1 for ties
+                        }
+                        return b.properties['index_new'] - a.properties['index_new'];
+                    });
+
+                    // Concatenate the invalid features (those with N/A values) to the end of the sorted valid ones
+                    let allRankedFeatures = validRankedFeatures.concat(invalidRankedFeatures);
+
+                    // Assign rank to all features
+                    allRankedFeatures.forEach(function(feature, index) {
+                        feature.properties['Ranking'] = index + 1; // Assign rank, starting from 1
+                    });
+
+                    // Re-bind the popup for each layer after updating the Ranking
+                    layer_PoligonosBasico_2.eachLayer(function(layer) {
+                        var feature = layer.feature;
+
+                    // Create the updated popup content with the new Ranking value
+                    var popupContent = '<table>\
+                        <tr>\
+                            <th scope="row">Departamento</th>\
+                            <td colspan="2">' + (feature.properties['Departamen'] !== null ? autolinker.link(feature.properties['Departamen'].toLocaleString()) : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <th scope="row">Municipio</th>\
+                            <td colspan="2">' + (feature.properties['Municipio'] !== null ? autolinker.link(feature.properties['Municipio'].toLocaleString()) : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <th scope="row">CE 1</th>\
+                            <td colspan="2">' + (feature.properties['school1'] !== null ? autolinker.link(feature.properties['school1'].toLocaleString()) : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <th scope="row">CE 2</th>\
+                            <td colspan="2">' + (feature.properties['school2'] !== null ? autolinker.link(feature.properties['school2'].toLocaleString()) : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <th scope="row">CE 3</th>\
+                            <td colspan="2">' + (feature.properties['school3'] !== null ? autolinker.link(feature.properties['school3'].toLocaleString()) : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <th scope="row">CE 4</th>\
+                            <td colspan="2">' + (feature.properties['school4'] !== null ? autolinker.link(feature.properties['school4'].toLocaleString()) : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <th scope="row">CE 5</th>\
+                            <td colspan="2">' + (feature.properties['school5'] !== null ? autolinker.link(feature.properties['school5'].toLocaleString()) : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <th scope="row">CE 6</th>\
+                            <td colspan="2">' + (feature.properties['school6'] !== null ? autolinker.link(feature.properties['school6'].toLocaleString()) : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <th scope="row">CE 7</th>\
+                            <td colspan="2">' + (feature.properties['school7'] !== null ? autolinker.link(feature.properties['school7'].toLocaleString()) : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <th scope="row">CE 8</th>\
+                            <td colspan="2">' + (feature.properties['school8'] !== null ? autolinker.link(feature.properties['school8'].toLocaleString()) : '') + '</td>\
+                        </tr>\
+                        <th scope="row">Indice</th>\
+                        <tr>\
+                            <td colspan="2">' + (feature.properties['index_new'] !== null ? autolinker.link(feature.properties['index_new'].toLocaleString()) : 'N/A') + '</td>\
+                        </tr>';
+                        
+                        // Only include the ranking row if `index_new` or `Indice` is valid
+                        if (feature.properties['index_new'] !== null && feature.properties['index_new'] !== undefined) {
+                            popupContent += '<tr>\
+                                <th scope="row">Ranking</th>\
+                                <td colspan="2">' + (feature.properties['Ranking'] !== undefined ? feature.properties['Ranking'] : 'N/A') + '</td>\
+                            </tr>';
+                        }
+                        
+                        popupContent += '</table>';
+                        
+                        var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+                        
+                        // Re-bind the popup with the updated content
+                        layer.bindPopup(content, { maxHeight: 400 });
+                        });
+
                 
                     alert("El índice ha sido calculado y actualizado en ambas capas.");
 
@@ -1160,15 +1210,19 @@ function updateTable() {
     const tableBody = document.querySelector("#table-section tbody");
     tableBody.innerHTML = "";  // Clear the existing rows
 
+    // Loop through the current data and display rankings based on the current sorted order
     currentData.forEach((feature, index) => {
         const row = document.createElement("tr");
 
+        // The ranking in the table should follow the sorted order
+        const tableRanking = start + index + 1;  // 1-based index for Clúster in table
+
         // Store OBJECTID_1 in map for future zoom functionality
-        objectIdToClusterMap[start + index + 1] = feature.OBJECTID_1;
+        objectIdToClusterMap[tableRanking] = feature.OBJECTID_1;
 
         // Add the columns with custom names, excluding OBJECTID_1 from the table
         row.innerHTML = `
-            <td>${start + index + 1}</td>  <!-- Clúster (ID) -->
+            <td>${tableRanking}</td>  <!-- Clúster (ID) for table, based on sorted order -->
             <td>${feature.Departamen || ""}</td>
             <td>${feature.Municipio || ""}</td>
             <td>${feature.Num_school || ""}</td>
@@ -1184,8 +1238,8 @@ function updateTable() {
             <td>${feature.Area || ""}</td>
             <td>${feature.perc_elec || ""}</td>
             <td>${feature.Priorizado || ""}</td>
-            <td>${aplicarPressed ? (feature.index_new !== undefined && feature.index_new !== null ? feature.index_new : "N/A") 
-                                  : (feature.Indice !== undefined && feature.Indice !== null ? feature.Indice : "N/A")}</td> <!-- Índice -->
+            <td>${aplicarPressed ? (feature.index_new !== undefined && feature.index_new !== null ? feature.index_new.toFixed(4) : "N/A") 
+                                  : (feature.Indice !== undefined && feature.Indice !== null ? feature.Indice.toFixed(4) : "N/A")}</td> <!-- Índice -->
         `;
 
         tableBody.appendChild(row);
@@ -1195,6 +1249,29 @@ function updateTable() {
     document.getElementById("prevPage").disabled = currentPage === 1;
     document.getElementById("nextPage").disabled = currentPage >= Math.ceil(sortedData.length / recordsPerPage);
 }
+
+
+
+// Event listener for "Siguiente" button (next page)
+document.getElementById("nextPage").addEventListener("click", function() {
+    const totalPages = Math.ceil(sortedData.length / recordsPerPage);
+    
+    if (currentPage < totalPages) {
+        currentPage++;  // Increment the page number
+        updateTable();  // Refresh the table with new data
+    }
+});
+
+// Event listener for "Anterior" button (previous page)
+document.getElementById("prevPage").addEventListener("click", function() {
+    if (currentPage > 1) {
+        currentPage--;  // Decrement the page number
+        updateTable();  // Refresh the table with new data
+    }
+});
+
+// Initial table load
+updateTable();
 
 // Event listener for the "Zoom al Clúster" button
 document.getElementById("zoomToClusterBtn").addEventListener("click", function() {
@@ -1235,7 +1312,13 @@ document.getElementById("priority-form").addEventListener("submit", function(eve
     aplicarPressed = true;  // Set flag that Aplicar has been pressed
 
     // Sort data by index_new when Aplicar is pressed
-    sortedData.sort((a, b) => (b.index_new || 0) - (a.index_new || 0));
+    // Sort data by index_new with secondary sort by OBJECTID_1 to handle ties
+    sortedData.sort(function(a, b) {
+        if ((b.index_new || 0) === (a.index_new || 0)) {
+            return a.OBJECTID_1 - b.OBJECTID_1; // Secondary sort by OBJECTID_1
+        }
+        return (b.index_new || 0) - (a.index_new || 0);
+    });
 
     currentPage = 1;  // Reset to the first page
     updateTable();  // Update table and store new OBJECTID_1 to Clúster mapping
